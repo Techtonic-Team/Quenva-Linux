@@ -3,18 +3,26 @@ image: ubuntu:22.04
 variables:
   DEBIAN_FRONTEND: noninteractive
   ISO_NAME: "live-image-amd64.hybrid.iso"
-  RELEASE_NAME: "quenva-linux-${CI_COMMIT_TAG}-amd64.iso"
+  RELEASE_NAME: "quenva-linux-${CI_COMMIT_TAG:-$(date +%Y%m%d)}-amd64.iso"
 
 stages:
   - prepare
   - build
   - release
 
+.setup_git: &setup_git
+  before_script:
+    - git config --global init.defaultBranch master
+    - git config --global user.email "ci@quenva.org"
+    - git config --global user.name "Quenva CI"
+
 prepare:
   stage: prepare
+  <<: *setup_git
   script:
     - apt update
     - apt install --no-install-recommends -y make wget ca-certificates git
+    - git describe || git tag v0.0.0  # Ensure git describe works
     - make download_extra
   artifacts:
     paths:
@@ -24,11 +32,18 @@ prepare:
 
 build-iso:
   stage: build
+  <<: *setup_git
   needs:
     - prepare
   script:
     - apt update
     - apt install --no-install-recommends -y live-build make git
+    # Ensure git describe works
+    - git describe || git tag v0.0.0
+    # Remove sudo from Makefile commands
+    - sed -i 's/sudo //g' Makefile
+    # Build ISO
+    - lb clean --all || true  # Ignore errors on first clean
     - make clean
     - make build
     # Rename the ISO for release
