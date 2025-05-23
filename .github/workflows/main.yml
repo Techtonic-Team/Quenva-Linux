@@ -32,7 +32,7 @@ jobs:
         run: git describe || git tag v0.0.0
 
       - name: Download extra components
-        run: make download_extra
+        run: sudo make download_extra
 
       - name: Upload includes.chroot
         uses: actions/upload-artifact@v4
@@ -64,32 +64,37 @@ jobs:
           path: config/includes.chroot/
 
       - name: Install build dependencies
-        run: sudo apt-get install -y --no-install-recommends live-build make
+        run: |
+          sudo apt-get install -y --no-install-recommends live-build make
+          sudo mkdir -p chroot
 
       - name: Prepare build environment
         run: |
           git describe || git tag v0.0.0
           sed -i 's/sudo //g' Makefile
 
-      - name: Clean build
+      - name: Clean build (with sudo)
         run: |
-          lb clean --all || true
-          make clean
+          sudo lb clean --all || true
+          sudo make clean
 
-      - name: Build ISO
-        run: make build
+      - name: Build ISO (with sudo)
+        run: sudo make build
 
       - name: Rename ISO
         run: |
           if [ -f "$ISO_NAME" ]; then
-            mv "$ISO_NAME" "$RELEASE_NAME"
+            sudo mv "$ISO_NAME" "$RELEASE_NAME"
           fi
         env:
           ISO_NAME: ${{ env.ISO_NAME }}
           RELEASE_NAME: ${{ env.RELEASE_NAME }}
 
       - name: Generate checksum
-        run: sha256sum "$RELEASE_NAME" > "$RELEASE_NAME.sha256"
+        run: sudo sha256sum "$RELEASE_NAME" | sudo tee "$RELEASE_NAME.sha256"
+
+      - name: Fix file permissions
+        run: sudo chown -R runner:runner .
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -99,7 +104,6 @@ jobs:
             ${{ env.RELEASE_NAME }}
             ${{ env.RELEASE_NAME }}.sha256
           retention-days: 7
-
   release:
     runs-on: ubuntu-22.04
     needs: build-iso
