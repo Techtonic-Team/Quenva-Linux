@@ -1,3 +1,4 @@
 #!/bin/bash
 echo "I: running $0"
-update-alternatives --set x-session-manager /usr/bin/xfce4-session
+update-alternatives --set x-session-manager /usr/bin/startplasma-x11
+update-alternatives --set x-display-manager /usr/bin/sddm

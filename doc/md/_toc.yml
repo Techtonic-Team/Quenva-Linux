@@ -1,28 +1,32 @@
 root: index.md
 entries:
   - file: download-and-installation.md
-    title: Download and installation
+    title: Getting Started
   - file: usage.md
-    title: Usage
-  - file: packages/utility.md
-    title: "Software: Utility"
-  - file: packages/network.md
-    title: "Software: Internet and network"
-  - file: packages/audio-video.md
-    title: "Software: Audio and video"
-  - file: packages/office.md
-    title: "Software: Office"
-  - file: packages/graphics.md
-    title: "Software: Graphics"
-  - file: packages/system.md
-    title: "Software: System"
-  - file: packages/development.md
-    title: "Software: Development"
-  - file: packages/games.md
-    title: "Software: Games"
-  - file: packages/extras.md
-    title: "Software: Extras"
-  - file: custom.md
-    title: "Customizing the build"
-  - file: CHANGELOG.md
-    title: "Changelog"
+    title: Using Quenva Linux
+  - caption: "Software"
+    entries:
+      - file: packages/utility.md
+        title: "System Utilities"
+      - file: packages/system.md
+        title: "System Administration"
+      - file: packages/network.md
+        title: "Internet & Network"
+      - file: packages/audio-video.md
+        title: "Multimedia"
+      - file: packages/office.md
+        title: "Office & Productivity"
+      - file: packages/graphics.md
+        title: "Graphics & Design"
+      - file: packages/development.md
+        title: "Development Tools"
+      - file: packages/games.md
+        title: "Games & Entertainment"
+      - file: packages/extras.md
+        title: "Additional Software"
+  - caption: "Advanced"
+    entries:
+      - file: custom.md
+        title: "Building from Source"
+      - file: CHANGELOG.md
+        title: "Release Notes"

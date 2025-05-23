@@ -1,10 +1,30 @@
-
 ### System
 
 ![](green.png) installed - ![](grey.png) suggested
 
 
 #### Package management
+
+<img align="right" src="https://cdn.kde.org/screenshots/plasma-discover/discover.png">
+
+**[plasma-discover](https://apps.kde.org/discover/)** - KDE Plasma Software Center
+
+Discover is a software center that lets you manage applications and addons. 
+It provides an easy way to install, update, and remove software packages on your Quenva Linux system.
+
+#### System Monitoring
+
+<img align="right" src="https://cdn.kde.org/screenshots/plasma-systemmonitor/plasma-systemmonitor.png">
+
+**[plasma-systemmonitor](https://apps.kde.org/plasma-systemmonitor/)** - System monitor for KDE Plasma
+
+A modern system monitor that lets you monitor system resources like CPU, memory, 
+network usage, and running processes. It provides detailed insights into your system's performance.
+
+<sub>
+
+-----------------------
+
 
 
 </sub>

@@ -49,3 +49,45 @@
 - #5 - Improve apparmor sandboxing - **`-`** `enhancement,security`
 - #4 - installer: preseed "domain name" installer question to None - **`-`** `enhancement,installer,UX`
 - #2 - improve OOM handling - **`-`** `enhancement,performance,UX`
+
+# Quenva Linux Roadmap
+
+## High Priority
+
+- [ ] Complete transition to Wayland
+- [ ] Optimize KDE Plasma configuration
+- [ ] Create custom Plymouth boot theme
+- [ ] Implement automated testing framework
+- [ ] Update documentation with screenshots
+
+## Medium Priority
+
+- [ ] Package selection review
+  - [ ] Remove unnecessary dependencies
+  - [ ] Add popular KDE applications
+  - [ ] Optimize default configurations
+- [ ] User experience improvements
+  - [ ] Custom welcome screen
+  - [ ] First-run setup wizard
+  - [ ] Default application selections
+
+## Low Priority
+
+- [ ] Additional themes and customization options
+- [ ] Performance optimizations
+- [ ] Add more language support
+- [ ] Create backup/restore utilities
+
+## Documentation
+
+- [ ] Complete user guide
+- [ ] Developer documentation
+- [ ] Contribution guidelines
+- [ ] Troubleshooting guide
+
+## Infrastructure
+
+- [ ] Set up CI/CD pipeline
+- [ ] Automated ISO testing
+- [ ] Mirror infrastructure
+- [ ] Bug tracking system

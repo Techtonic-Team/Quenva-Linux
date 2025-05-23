@@ -3,10 +3,10 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'debian-live-config'
-author = 'nodiscc@gmail.com'
-version = '4.2.1'
-release = '4.2.1'
+project = 'Quenva Linux'
+author = 'Quenva Team'
+version = '1.0.0'
+release = '1.0.0'
 html_show_copyright = True
 
 # -- General configuration ---------------------------------------------------
@@ -25,7 +25,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['README.md']
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -47,21 +47,20 @@ master_doc = 'index'
 html_theme_options = {
     'display_version': True,
     'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
+    'style_external_links': True,
     'vcs_pageview_mode': 'edit',
     'collapse_navigation': False,
     'sticky_navigation': True,
     'navigation_depth': 2, # Defines sidebar navigation depth
-    'titles_only': False
+    'titles_only': False,
+    'style_nav_header_background': '#1A73E8',
 }
 
 html_context = {
     "display_gitlab": True, # Integrate Gitlab
     "gitlab_host": "gitlab.com",
-    "gitlab_user": "nodiscc", # Username
-    "gitlab_repo": "debian-live-config", # Repo name
+    "gitlab_user": "quenva", # Username
+    "gitlab_repo": "quenva-config", # Repo name
     "gitlab_version": "master", # Version
     "conf_py_path": "/doc/md/" # Path in the checkout to the docs root
 }
-
-exclude_patterns = ['README.md']

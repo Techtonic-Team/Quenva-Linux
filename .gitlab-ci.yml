@@ -1,9 +1,72 @@
-image: debian:buster
+image: ubuntu:22.04
 
-build:
+variables:
+  DEBIAN_FRONTEND: noninteractive
+  ISO_NAME: "live-image-amd64.hybrid.iso"
+  RELEASE_NAME: "quenva-linux-${CI_COMMIT_TAG}-amd64.iso"
+
+stages:
+  - prepare
+  - build
+  - release
+
+prepare:
+  stage: prepare
   script:
-  - apt update && apt install --no-install-recommends -y make wget ca-certificates
-  - make download_extra
+    - apt update
+    - apt install --no-install-recommends -y make wget ca-certificates git
+    - make download_extra
+  artifacts:
+    paths:
+      - config/includes.chroot/
+    expire_in: 1 day
   interruptible: true
+
+build-iso:
+  stage: build
+  needs:
+    - prepare
+  script:
+    - apt update
+    - apt install --no-install-recommends -y live-build make git
+    - make clean
+    - make build
+    # Rename the ISO for release
+    - if [ -f "${ISO_NAME}" ]; then mv "${ISO_NAME}" "${RELEASE_NAME}"; fi
+    - sha256sum "${RELEASE_NAME}" > "${RELEASE_NAME}.sha256"
+  artifacts:
+    paths:
+      - ${RELEASE_NAME}
+      - ${RELEASE_NAME}.sha256
+    expire_in: 1 week
+  interruptible: true
+
+release:
+  stage: release
+  needs:
+    - build-iso
   rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_COMMIT_TAG
+  script:
+    - apt update
+    - apt install --no-install-recommends -y curl jq
+    # Create release
+    - |
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" \
+           --data '{
+             "name": "Quenva Linux '"${CI_COMMIT_TAG}"'",
+             "tag_name": "'"${CI_COMMIT_TAG}"'",
+             "description": "Quenva Linux '"${CI_COMMIT_TAG}"' Release\n\nRun Free. Stay Sharp."
+           }' \
+           "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/releases"
+    # Upload ISO and checksum
+    - |
+      for file in ${RELEASE_NAME}*; do
+        curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" \
+             --upload-file "${file}" \
+             "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/quenva-linux/${CI_COMMIT_TAG}/${file}"
+      done
+  artifacts:
+    paths:
+      - ${RELEASE_NAME}
+      - ${RELEASE_NAME}.sha256

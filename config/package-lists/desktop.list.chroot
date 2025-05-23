@@ -1,0 +1,67 @@
+#Title: Desktop Environment
+
+#Section: KDE Plasma Desktop
+#Description: KDE Plasma desktop environment
+plasma-desktop
+sddm
+kde-config-sddm
+plasma-workspace
+plasma-nm
+plasma-pa
+powerdevil
+bluedevil
+kwin-x11
+kwin-wayland
+kde-cli-tools
+khotkeys
+systemsettings
+plasma-systemmonitor
+plasma-discover
+plasma-browser-integration
+plasma-firewall
+plasma-welcome
+plasma-thunderbolt
+kscreen
+breeze
+breeze-gtk-theme
+kde-style-breeze
+breeze-icon-theme
+kwin-addons
+plasma-widgets-addons
+plasma-sdk
+plasma-integration
+xdg-desktop-portal-kde
+kde-config-gtk-style
+kde-config-tablet
+kde-spectacle
+dolphin
+konsole
+kate
+gwenview
+okular
+ark
+kcalc
+partitionmanager
+filelight
+kdeconnect
+kde-config-flatpak
+plasma-disks
+
+#Section: System Components
+phonon-backend-vlc
+kio-extras
+kimageformat-plugins
+qt5-style-plugins
+firmware-linux
+firmware-linux-nonfree
+firmware-misc-nonfree
+firmware-realtek
+pulseaudio-module-bluetooth
+gstreamer1.0-pulseaudio
+gtk2-engines-breeze
+qt5ct
+libqt5svg5
+
+#Section: Display Manager
+sddm
+sddm-theme-breeze

@@ -1,2 +1,9 @@
-#!/bin/bash
+#!/bin/sh
+# Update dconf database with current settings
 dconf update
+
+# Set KDE Plasma as default session
+if [ -f /usr/share/xsessions/plasma.desktop ]; then
+    echo "[Seat:*]" > /etc/sddm.conf.d/default_session.conf
+    echo "Session=plasma.desktop" >> /etc/sddm.conf.d/default_session.conf
+fi

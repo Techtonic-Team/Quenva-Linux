@@ -1,8 +1,7 @@
 #Title: System
 
 #Section: Package management
-#Description: gnome-packagekit
-#Description: synaptic
+#Description: plasma-discover
 apt-listchanges
 apt-transport-https
 aptitude
@@ -11,43 +10,15 @@ debian-archive-keyring
 debian-keyring
 debsecan
 debsums
-gnome-packagekit
-gnome-package-updater
+plasma-discover
 packagekit
 packagekit-tools
-software-properties-gtk
-synaptic
 unattended-upgrades
-vrms
 command-not-found
-#Alt: gnome-package-updater
-#Alt: debfoster
-#Alt: appstream-generator
-#Alt: apt-config-auto-update
-#Alt: apt-file
-#Alt: apt-forktracer
-#Alt: apt-listbugs
-#Alt: aptitude-doc-fr
-#Alt: debian-security-support
-#Alt: deborphan
-#Alt: debtree
-#Alt: gnome-software
-#Alt: gnome-software-plugin-flatpak
-#Alt: gstreamer1.0-packagekit
-#Alt: needrestart
-#Alt: packagekit-command-not-found
-#Alt: packagekit-gtk3-module
-#Alt: extrepo
-#Alt: policy-rcd-declarative-deny-all
-#Alt: reportbug
-#Alt: nala
-#Alt: gdebi
-#gnome-software-plugin-deb # sid only
-#ngome-software-plugin-fwupd # sid only
 
 #Section: Task management/monitoring
-#Description: xfce4-taskmanager
-xfce4-taskmanager
+#Description: ksysguard
+plasma-systemmonitor
 htop
 iotop
 lm-sensors

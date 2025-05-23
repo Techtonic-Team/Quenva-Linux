@@ -1,3 +1,45 @@
+# Utility Applications
+
+![](green.png) installed - ![](grey.png) suggested
+
+## File Management
+
+<img align="right" src="https://cdn.kde.org/screenshots/dolphin/dolphin.png">
+
+**[Dolphin](https://apps.kde.org/dolphin/)** - Powerful file manager for KDE Plasma
+
+Dolphin is a feature-rich file manager that provides a clean and intuitive interface for 
+managing your files. It includes features like:
+- Split views
+- Built-in terminal
+- Version control integration
+- File search and filtering
+- Customizable interface
+
+## Terminal Emulator
+
+<img align="right" src="https://cdn.kde.org/screenshots/konsole/konsole.png">
+
+**[Konsole](https://apps.kde.org/konsole/)** - KDE's terminal emulator
+
+Konsole is a powerful terminal emulator with features like:
+- Multiple tabs and split views
+- Customizable profiles
+- SSH connection management
+- Extensive color scheme support
+
+## Text Editor
+
+<img align="right" src="https://cdn.kde.org/screenshots/kate/kate.png">
+
+**[Kate](https://apps.kde.org/kate/)** - Advanced text editor
+
+Kate is a feature-rich text editor that includes:
+- Syntax highlighting for many languages
+- Code folding
+- Multiple document interface
+- Plugin support
+- Integrated terminal
 
 ### Utility
 

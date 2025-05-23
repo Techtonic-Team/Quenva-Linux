@@ -1,34 +1,39 @@
-# Building a custom Debian ISO image
+# Building Quenva Linux from Source
 
-[`Makefile`](https://gitlab.com/nodiscc/debian-live-config/-/blob/master/Makefile) automates maintenance/build/release procedures (download of extra components, tests and documentation generation, running the build, generating/signing checksums...).
+The build process for Quenva Linux uses a Makefile to automate maintenance, build, and release procedures. This includes downloading components, running tests, generating documentation, building the ISO image, and generating checksums.
 
-The live/ISO image build process is managed by [live-build](https://packages.debian.org/bookworm/live-build):
+## Build Requirements
 
-* [Live Systems manual](https://live-team.pages.debian.net/live-manual/html/live-manual/index.en.html)
-* [`man lb config`](https://manpages.debian.org/bookworm/live-build/lb_config.1.en.html)
-* [`man lb build`](https://manpages.debian.org/bookworm/live-build/lb_build.1.en.html)
-* [`man lb clean`](https://manpages.debian.org/bookworm/live-build/lb_clean.1.en.html)
-* [`man live-build`](https://manpages.debian.org/bookworm/live-build/live-build.7.en.html)
-* `/usr/share/doc/live-manual/pdf/live-manual.portrait.en.a4.pdf.gz` ([live-manual](https://packages.debian.org/bookworm/live-manual) package)
+- Ubuntu-based system (recommended: latest LTS version)
+- Essential build tools and live-build package
+- At least 10GB of free disk space
+- Good internet connection for package downloads
 
-Run `make help` for a description of available Makefile targets.
+## Build Process
 
-
-## Build using the default configuration
-
-Install [Debian](https://www.debian.org). You must build from the same distribution as the target distribution (build *bookworm* systems on a build machine running Debian *bookworm*, *testing* systems on a machine running Debian *testing*...). Then run the following commands:
-
+1. Install the required packages:
 ```bash
-# install requirements for the build system
-sudo apt install make git sudo live-build
-# clone the repository
-git clone https://gitlab.com/nodiscc/debian-live-config
-# build the image
-cd debian-live-config && make install_buildenv && make
+sudo apt update
+sudo apt install live-build make git
 ```
 
-You need some disk space for the download and build caches. The build directory grows to about 13GB using the default configuration.
+2. Clone the repository:
+```bash
+git clone https://github.com/quenva/quenva-config.git
+cd quenva-config
+```
 
+3. Start the build:
+```bash
+make build
+```
+
+The build process will:
+- Set up the live-build environment
+- Download and configure all required packages
+- Set up KDE Plasma desktop environment
+- Configure system settings and branding
+- Create the bootable ISO image
 
 ## Changing the default build configuration
 

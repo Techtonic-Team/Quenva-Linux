@@ -1,62 +1,41 @@
-# debian-live-config
+# Quenva Linux
 
-![](https://gitlab.com/nodiscc/debian-live-config/badges/master/pipeline.svg)
+**Quenva** - is a Linux distribution created for those who want a modern, fast and clean environment without complexity. It is based on the stable Ubuntu foundation, but radically changed with a focus on customisation, aesthetics, performance and user freedom.
 
-[Debian GNU/Linux](https://www.debian.org/) desktop operating system for personal computers & workstations.
+## 🧭 What is Quenva?
 
-![](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-main.png)
+Quenva is not just another distro. It's an attempt to redefine what Linux should be:
 
-## Features
+- **Only-Wayland**: no X11. Only a modern graphics core.
+- **No Junk**: No unnecessary packages, heavy DEs or redundant services.
+- **Fast Kernel**: optimised environment with minimal latency.
+- **Easy to use and flexible**: easy for beginners, highly customisable for tweaks.
+- **Stable Ubuntu** + freshness of a custom vision.
 
-- Ready-to-use operating system for personal computers/workstations
-- Preinstalled, preconfigured software for common tasks (office, multimedia, network...)
-- Good out-of-the-box experience with a focus on usability
-- Installation time < 10 minutes, without Internet access
-- Able to run [live](https://en.wikipedia.org/wiki/Live_USB) from USB drive (no installation required)
-- Fits on a 2GB USB drive
-- Only uses official Debian [stable](https://wiki.debian.org/DebianStable) + [backports](https://wiki.debian.org/Backports) packages and as few third-party components as possible
-- Reliable, low maintenance
-- Lightweight/low resource usage, good performance on low-end or recycled hardware
-- Proprietary drivers/firmware for good compatibility with recent hardware
+## 🧩 Main features
 
-This repository contains the `live-build` configuration and scripts used to build a custom Debian ISO image. See [Building a custom Debian ISO image](doc/md/custom.md).
+- 🖥️ **Wayland-first environment** (Wayland only)
+- ⚙️ **Clean base system** without imposed DE
+- 🧰 **Containerisation and sandbox-ready** (flatpak, distrobox)
+- 🚀 **Fast startup and minimal memory weight**.
+- 💡 **Sharp focus on UX/UI**, easy customisation
+- 🔐 **PipeWire + Portals + Flatpak** - modern multimedia and security
 
+## Who is it for?
 
-## Download
+- **Developers** who need a stable base and modularity
+- **Newbies** who want everything to work simply
+- **Linux enthusiasts** who want more customisation without manual assembly
+- **Those** who value performance, simplicity and modern features
 
-**[![](doc/md/download.png) Download .ISO image](https://github.com/nodiscc/debian-live-config/releases/download/4.2.1/debian-live-config-4.2.1-debian-bookworm-amd64.iso)** (64-bit)
+> Quenva doesn't put itself in opposition to other distributions - it just wants to take a different path.
 
+## 📥 Download and participate
 
-## Documentation
+- ISO: [Coming soon on releases]
+- Wiki: documentation and manuals (in development)
+- Contributions: open to feedback, issues, forks, and pull requests
 
-- [Download and installation](doc/md/download-and-installation.md)
-- [Usage](doc/md/usage.md)
-- [Software: Utility](doc/md/packages/utility.md)
-- [Software: Internet and network](doc/md/packages/network.md)
-- [Software: Audio and video](doc/md/packages/audio-video.md)
-- [Software: Office](doc/md/packages/office.md)
-- [Software: Graphics](doc/md/packages/graphics.md)
-- [Software: System](doc/md/packages/system.md)
-- [Software: Development](doc/md/packages/development.md)
-- [Software: Games](doc/md/packages/games.md)
-- [Software: Extras](doc/md/packages/extras.md)
-- [Changelog](CHANGELOG.md)
+---
 
-
-## Screenshots
-
-![](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-main.png)
-
-![](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-windows.png)
-
-
-## Source code
-
-- [Gitlab](https://gitlab.com/nodiscc/debian-live-config) (mirror)
-- [Github](https://github.com/nodiscc/debian-live-config) (mirror)
-
-
-## License
-
-[LICENSE](LICENSE)
-
+### Quenva — Run Free. Stay Sharp.

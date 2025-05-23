@@ -1,30 +1,34 @@
-# debian-live-config
+# Quenva Linux
 
 ![](https://gitlab.com/nodiscc/debian-live-config/badges/master/pipeline.svg)
 
-[Debian GNU/Linux](https://www.debian.org/) desktop operating system for personal computers & workstations.
+**Run Free. Stay Sharp.**
+
+A modern, fast and clean Linux distribution focused on customization, aesthetics, performance and user freedom.
 
 ![](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-main.png)
 
 ## Features
 
-- Ready-to-use operating system for personal computers/workstations
-- Preinstalled, preconfigured software for common tasks (office, multimedia, network...)
-- Good out-of-the-box experience with a focus on usability
+- Only-Wayland environment for a modern graphics core
+- Clean base system without imposed Desktop Environment
+- Ready for containerization and sandboxing (flatpak, distrobox)
+- Fast startup and minimal memory footprint
+- Sharp focus on UX/UI and easy customization
 - Installation time < 10 minutes, without Internet access
 - Able to run [live](https://en.wikipedia.org/wiki/Live_USB) from USB drive (no installation required)
 - Fits on a 2GB USB drive
-- Only uses official Debian [stable](https://wiki.debian.org/DebianStable) + [backports](https://wiki.debian.org/Backports) packages and as few third-party components as possible
+- Based on stable Ubuntu with custom optimizations
 - Reliable, low maintenance
 - Lightweight/low resource usage, good performance on low-end or recycled hardware
 - Proprietary drivers/firmware for good compatibility with recent hardware
 
-This repository contains the `live-build` configuration and scripts used to build a custom Debian ISO image. See [Building a custom Debian ISO image](custom.md).
+This repository contains the build configuration and scripts used to build Quenva Linux. See [Building from source](custom.md).
 
 
 ## Download
 
-**[![](download.png) Download .ISO image](https://github.com/nodiscc/debian-live-config/releases/download/4.2.1/debian-live-config-4.2.1-debian-bookworm-amd64.iso)** (64-bit)
+**[![](download.png) Download .ISO image](https://github.com/nodiscc/debian-live-config/releases/download/4.2.1/quenva-linux-4.2.1-amd64.iso)** (64-bit)
 
 
 ## Documentation
@@ -45,9 +49,9 @@ This repository contains the `live-build` configuration and scripts used to buil
 
 ## Screenshots
 
-![](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-main.png)
+![Quenva Linux Desktop](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-main.png)
 
-![](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-windows.png)
+![Quenva Linux Applications](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-windows.png)
 
 
 ## Source code

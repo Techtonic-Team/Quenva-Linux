@@ -1,20 +1,10 @@
 #Title: Internet and network
 
 #Section: Web browsers
-#Description: firefox-esr
-firefox-esr
-firefox-esr-l10n-fr
-webext-ublock-origin-firefox
-webext-keepassxc-browser
-#Alt: luakit
-#Alt: chromium
-#Alt: nss-passwords
-#Alt: w3m
-#Alt: links2
-#Alt: surf
-#Alt: elinks
-#pkg-mozilla-archive-keyring # sid only
-#midori # bullseye only
+#Description: firefox
+firefox
+firefox-l10n-en-us
+plasma-browser-integration
 
 #Section: Instant messaging
 ##Description: pidgin
@@ -147,9 +137,10 @@ wget
 #smbc # sid only
 
 #Section: Network management
-#Description: network-manager-gnome
-network-manager-gnome
-network-manager-openvpn-gnome
+#Description: plasma-nm
+plasma-nm
+network-manager-qt
+plasma-firewall
 wireguard
 dnsmasq-base
 hostname
@@ -201,9 +192,9 @@ wireless-regdb
 #zeek # sid only
 
 #Section: Firewall
-#Description: gufw
+#Description: plasma-firewall
 ufw
-gufw
+plasma-firewall
 iptables
 #Alt: ferm
 #Alt: iptables-persistent

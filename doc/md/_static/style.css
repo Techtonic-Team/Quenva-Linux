@@ -1,0 +1,121 @@
+/* Quenva Linux Documentation Theme */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500&display=swap');
+
+/* Main colors */
+:root {
+    --quenva-blue: #1A73E8;
+    --quenva-gold: #FFCC00;
+    --quenva-white: #FFFFFF;
+    --quenva-grey: #F5F5F5;
+    --quenva-text: #212121;
+}
+
+/* Base theme overrides */
+.wy-nav-content {
+    background: var(--quenva-white);
+    color: var(--quenva-text);
+}
+
+.wy-side-nav-search {
+    background-color: var(--quenva-blue);
+}
+
+.wy-nav-side {
+    background: var(--quenva-grey);
+}
+
+/* Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--quenva-text);
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--quenva-blue);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+/* Links and Buttons */
+a {
+    color: var(--quenva-blue);
+}
+
+a:hover {
+    color: var(--quenva-gold);
+}
+
+.btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Navigation */
+.wy-menu-vertical header, 
+.wy-menu-vertical p.caption {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--quenva-blue);
+}
+
+.wy-menu-vertical a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Code blocks */
+code {
+    font-size: 14px;
+    background: var(--quenva-grey);
+}
+
+/* Tables */
+table {
+    background: var(--quenva-white);
+}
+
+th {
+    background: var(--quenva-blue) !important;
+    color: var(--quenva-white) !important;
+}
+
+/* Admonitions */
+.admonition {
+    background: var(--quenva-grey);
+}
+
+.admonition-title {
+    background: var(--quenva-blue) !important;
+    color: var(--quenva-white) !important;
+}
+
+/* Search box */
+.wy-side-nav-search input[type="text"] {
+    border-color: var(--quenva-gold);
+}
+
+/* Footer */
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: var(--quenva-text);
+}
