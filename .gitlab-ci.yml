@@ -10,18 +10,19 @@ stages:
   - build
   - release
 
-.setup_git: &setup_git
+.setup_base: &setup_base
   before_script:
+    - apt-get update
+    - apt-get install -y --no-install-recommends git ca-certificates
     - git config --global init.defaultBranch master
     - git config --global user.email "ci@quenva.org"
     - git config --global user.name "Quenva CI"
 
 prepare:
   stage: prepare
-  <<: *setup_git
+  <<: *setup_base
   script:
-    - apt update
-    - apt install --no-install-recommends -y make wget ca-certificates git
+    - apt-get install -y --no-install-recommends make wget
     - git describe || git tag v0.0.0  # Ensure git describe works
     - make download_extra
   artifacts:
@@ -32,12 +33,11 @@ prepare:
 
 build-iso:
   stage: build
-  <<: *setup_git
+  <<: *setup_base
   needs:
     - prepare
   script:
-    - apt update
-    - apt install --no-install-recommends -y live-build make git
+    - apt-get install -y --no-install-recommends live-build make
     # Ensure git describe works
     - git describe || git tag v0.0.0
     # Remove sudo from Makefile commands
@@ -58,13 +58,13 @@ build-iso:
 
 release:
   stage: release
+  <<: *setup_base
   needs:
     - build-iso
   rules:
     - if: $CI_COMMIT_TAG
   script:
-    - apt update
-    - apt install --no-install-recommends -y curl jq
+    - apt-get install -y --no-install-recommends curl jq
     # Create release
     - |
       curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" \
