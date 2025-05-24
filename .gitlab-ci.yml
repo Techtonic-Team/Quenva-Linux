@@ -65,8 +65,12 @@ release:
       Run Free. Stay Sharp.
     tag_name: $CI_COMMIT_TAG
     assets:
-      files:
-        - path: quenva-linux-$CI_COMMIT_TAG-amd64.iso
-          type: application/octet-stream
-        - path: quenva-linux-$CI_COMMIT_TAG-amd64.iso.sha256
-          type: text/plain
+      links:
+        - name: "quenva-linux-$CI_COMMIT_TAG-amd64.iso"
+          url: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/jobs/${CI_JOB_ID}/artifacts/quenva-linux-${CI_COMMIT_TAG}-amd64.iso"
+          link_type: other
+          filepath: "quenva-linux-${CI_COMMIT_TAG}-amd64.iso"
+        - name: "quenva-linux-$CI_COMMIT_TAG-amd64.iso.sha256"
+          url: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/jobs/${CI_JOB_ID}/artifacts/quenva-linux-${CI_COMMIT_TAG}-amd64.iso.sha256"
+          link_type: other
+          filepath: "quenva-linux-${CI_COMMIT_TAG}-amd64.iso.sha256"
