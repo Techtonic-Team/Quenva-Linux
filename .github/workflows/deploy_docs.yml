@@ -1,0 +1,34 @@
+name: Deploy Sphinx Docs to GitHub Pages
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Replicate ReadTheDocs environment
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"  # Match .readthedocs.yml version
+
+      - name: Install dependencies
+        run: |
+          pip install -r docs/requirements.txt  # If you have one
+          pip install sphinx myst-parser sphinx-rtd-theme
+
+      # Build documentation
+      - name: Build HTML
+        working-directory: docs/md  # Where your conf.py lives
+        run: |
+          sphinx-build -b html . _build/html
+
+      # Deploy to GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/md/_build/html
