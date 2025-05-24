@@ -18,7 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r docs/requirements.txt  # If you have one
+          pip install -r docs/md/requirements.txt  # If you have one
           pip install sphinx myst-parser sphinx-rtd-theme
 
       # Build documentation
