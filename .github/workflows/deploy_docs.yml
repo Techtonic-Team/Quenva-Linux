@@ -18,12 +18,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r docs/md/requirements.txt  # If you have one
+          pip install -r doc/md/requirements.txt  # If you have one
           pip install sphinx myst-parser sphinx-rtd-theme
 
       # Build documentation
       - name: Build HTML
-        working-directory: docs/md  # Where your conf.py lives
+        working-directory: doc/md  # Where your conf.py lives
         run: |
           sphinx-build -b html . _build/html
 
@@ -32,4 +32,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/md/_build/html
+          publish_dir: doc/md/_build/html
