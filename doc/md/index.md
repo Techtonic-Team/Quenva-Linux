@@ -49,15 +49,13 @@ This repository contains the build configuration and scripts used to build Quenv
 
 ## Screenshots
 
-![Quenva Linux Desktop](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-main.png)
-
-![Quenva Linux Applications](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-windows.png)
+> Comming soon
 
 
 ## Source code
 
-- [Gitlab](https://gitlab.com/nodiscc/debian-live-config) (mirror)
-- [Github](https://github.com/nodiscc/debian-live-config) (mirror)
+- [Gitlab](https://gitlab.com/techtonic-team/quenva-linux/quenva) (mirror)
+- [Github](https://github.com/techtonic-team/quenva-linux) (mirror)
 
 
 ## License

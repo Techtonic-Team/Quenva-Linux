@@ -59,8 +59,8 @@ html_theme_options = {
 html_context = {
     "display_gitlab": True, # Integrate Gitlab
     "gitlab_host": "gitlab.com",
-    "gitlab_user": "quenva", # Username
-    "gitlab_repo": "quenva-config", # Repo name
-    "gitlab_version": "master", # Version
+    "gitlab_user": "techtonic-team/quenva-linux", # Username
+    "gitlab_repo": "quenva", # Repo name
+    "gitlab_version": "dev", # Version
     "conf_py_path": "/doc/md/" # Path in the checkout to the docs root
 }
