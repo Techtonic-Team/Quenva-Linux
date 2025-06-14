@@ -17,7 +17,6 @@ install_buildenv:
 .PHONY: clean # clear all caches, only required when changing the mirrors/architecture config
 clean:
 	sudo lb clean --all
-	make -f Makefile.extra clean
 	rm -rf .venv
 
 build:
