@@ -31,9 +31,6 @@ jobs:
       - name: Ensure git describe works
         run: git describe || git tag v0.0.0
 
-      - name: Download extra components
-        run: sudo make download_extra
-
       - name: Upload includes.chroot
         uses: actions/upload-artifact@v4
         with:
