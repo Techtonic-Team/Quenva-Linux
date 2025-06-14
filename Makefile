@@ -8,10 +8,6 @@ LIBVIRT_STORAGE_PATH := /var/lib/libvirt/images/
 # remove 'download_extra' to build without third party software/dotfiles
 all: install_buildenv download_extra build
 
-.PHONY: download_extra # download third-party components
-download_extra:
-	make -f Makefile.extra
-
 .PHONY: install_buildenv # install packages required to build the image
 install_buildenv:
 	sudo apt -y install live-build make build-essential wget git unzip colordiff apt-transport-https rename ovmf rsync python3-venv gnupg
